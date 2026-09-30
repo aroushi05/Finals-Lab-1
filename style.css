@@ -1,0 +1,275 @@
+/* =========================================================
+   Theme: Akasha Archive — a Dendro / wisdom-forest palette
+   Deep canopy greens, antique gold leaf, sun-warmed parchment
+   ========================================================= */
+
+:root {
+  --canopy-900: #263a22;
+  --canopy-700: #3d5c37;
+  --canopy-500: #6b8f5c;
+  --sage-300: #a9c497;
+  --sand-100: #f4ecd8;
+  --sand-050: #faf5e8;
+  --gold-600: #b3872f;
+  --gold-400: #d4ab5c;
+  --glow-400: #c7e26a;
+  --ink-800: #2c3324;
+  --ink-600: #4d5940;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Quicksand", "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--ink-800);
+  min-height: 100vh;
+  background-color: var(--sand-100);
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(107, 143, 92, 0.16), transparent 40%),
+    radial-gradient(circle at 88% 92%, rgba(179, 135, 47, 0.14), transparent 45%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='none' stroke='%236b8f5c' stroke-width='1' opacity='0.09'%3E%3Cpath d='M20 120 C 20 80, 45 70, 45 30 C 45 70, 70 80, 70 120'/%3E%3Cpath d='M90 130 C 90 95, 112 88, 112 55 C 112 88, 132 95, 132 130'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+
+/* ---------------- Header ---------------- */
+.page-header {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.page-header h1 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 700;
+  font-size: 2.9rem;
+  letter-spacing: 0.02em;
+  margin: 0 0 10px;
+  color: var(--canopy-900);
+}
+
+.page-header p {
+  color: var(--ink-600);
+  margin: 0 0 18px;
+  font-size: 1.02rem;
+}
+
+.page-header::after {
+  content: "";
+  display: block;
+  width: 220px;
+  height: 14px;
+  margin: 0 auto;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='14' viewBox='0 0 220 14'%3E%3Cpath d='M0 7 H85' stroke='%23b3872f' stroke-width='1.4'/%3E%3Cpath d='M135 7 H220' stroke='%23b3872f' stroke-width='1.4'/%3E%3Ccircle cx='110' cy='7' r='4.5' fill='none' stroke='%23b3872f' stroke-width='1.4'/%3E%3Cpath d='M110 3.2 C 112 5, 112 9, 110 10.8 C 108 9, 108 5, 110 3.2 Z' fill='%23c7e26a'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* ---------------- Layout ---------------- */
+.layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 26px;
+  align-items: start;
+}
+
+.card {
+  position: relative;
+  background: var(--sand-050);
+  border-radius: 18px;
+  padding: 30px 30px 28px;
+  border: 1px solid rgba(179, 135, 47, 0.35);
+  box-shadow: 0 14px 34px rgba(38, 58, 34, 0.1);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1px solid rgba(107, 143, 92, 0.28);
+  border-radius: 13px;
+  pointer-events: none;
+}
+
+.card h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 0 0 20px;
+  color: var(--canopy-700);
+}
+
+/* ---------------- Form fields ---------------- */
+.field {
+  margin-bottom: 17px;
+  border: none;
+  padding: 0;
+}
+
+.field label:not(.inline) {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  color: var(--ink-600);
+}
+
+.field legend {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  padding: 0;
+  color: var(--ink-600);
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="number"],
+.field input[type="date"],
+.field input[type="tel"],
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 10px 13px;
+  border: 1px solid var(--sage-300);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: #fffdf6;
+  color: var(--ink-800);
+  transition: 0.2s;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--canopy-500);
+  box-shadow: 0 0 0 3px rgba(199, 226, 106, 0.35);
+  background: #ffffff;
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+label.inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 16px;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--ink-600);
+}
+
+.field input[type="radio"],
+.field input[type="checkbox"] {
+  accent-color: var(--canopy-500);
+}
+
+/* ---------------- Buttons ---------------- */
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 22px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, var(--canopy-500), var(--canopy-700));
+  color: var(--sand-050);
+  border: 1px solid var(--gold-400);
+  flex: 1;
+}
+
+.btn.primary:hover {
+  box-shadow: 0 0 0 4px rgba(199, 226, 106, 0.28);
+  transform: translateY(-1px);
+}
+
+.btn.secondary {
+  background: transparent;
+  color: var(--canopy-700);
+  border: 1px solid var(--sage-300);
+}
+
+.btn.secondary:hover {
+  background: rgba(107, 143, 92, 0.1);
+}
+
+/* ---------------- Output card ---------------- */
+.output-display {
+  min-height: 320px;
+}
+
+.output-display .placeholder {
+  color: var(--ink-600);
+  font-style: italic;
+  opacity: 0.75;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 4px;
+  border-bottom: 1px dashed rgba(107, 143, 92, 0.4);
+  font-size: 0.95rem;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-row .label {
+  font-weight: 600;
+  color: var(--canopy-700);
+}
+
+.info-row .value {
+  color: var(--ink-800);
+  text-align: right;
+}
+
+/* ---------------- Footer ---------------- */
+.page-footer {
+  text-align: center;
+  margin-top: 46px;
+  color: var(--ink-600);
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 800px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header h1 {
+    font-size: 2.1rem;
+  }
+
+  .card {
+    padding: 22px 20px 22px;
+  }
+}
